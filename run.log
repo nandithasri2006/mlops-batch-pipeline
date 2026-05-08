@@ -1,0 +1,72 @@
+2026-05-08 10:47:49,683 - INFO - Job started
+2026-05-08 10:47:49,708 - INFO - Config validated: seed=42, window=5, version=v1
+2026-05-08 10:47:49,708 - ERROR - Job failed
+Traceback (most recent call last):
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\run.py", line 49, in main
+    df = validate_csv(args.input)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\utils\validator.py", line 7, in validate_csv
+    raise FileNotFoundError("Input CSV file not found")
+FileNotFoundError: Input CSV file not found
+2026-05-08 11:06:25,952 - INFO - Job started
+2026-05-08 11:06:25,952 - INFO - Config validated: seed=42, window=5, version=v1
+2026-05-08 11:06:26,014 - ERROR - Job failed
+Traceback (most recent call last):
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\run.py", line 49, in main
+    df = validate_csv(args.input)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\utils\validator.py", line 18, in validate_csv
+    raise ValueError("Missing required column: close")
+ValueError: Missing required column: close
+2026-05-08 11:21:05,702 - INFO - Job started
+2026-05-08 11:21:05,712 - INFO - Config validated: seed=42, window=5, version=v1
+2026-05-08 11:21:05,749 - ERROR - Job failed
+Traceback (most recent call last):
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\utils\validator.py", line 22, in validate_csv
+    df = pd.read_csv(
+         ^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1922, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\python_parser.py", line 156, in __init__
+    ) = self._infer_columns()
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\python_parser.py", line 591, in _infer_columns
+    line = self._buffered_line()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\python_parser.py", line 822, in _buffered_line
+    return self._next_line()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\python_parser.py", line 940, in _next_line
+    line = self._check_for_bom(line)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\venv\Lib\site-packages\pandas\io\parsers\python_parser.py", line 860, in _check_for_bom
+    end = first_row_bom[2:].index(quote) + 2
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: substring not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\run.py", line 49, in main
+    df = validate_csv(args.input)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nandh\OneDrive\Documents\mlops-task\utils\validator.py", line 30, in validate_csv
+    raise ValueError(f"Invalid CSV format: {str(e)}")
+ValueError: Invalid CSV format: substring not found
+2026-05-08 11:31:26,550 - INFO - Job started
+2026-05-08 11:31:26,552 - INFO - Config validated: seed=42, window=5, version=v1
+2026-05-08 11:31:26,601 - INFO - Rows loaded: 10000
+2026-05-08 11:31:26,612 - INFO - Computing rolling mean
+2026-05-08 11:31:26,616 - INFO - Signal generation completed
+2026-05-08 11:31:26,618 - INFO - Metrics summary: {'version': 'v1', 'rows_processed': 10000, 'metric': 'signal_rate', 'value': 0.4989, 'latency_ms': 68, 'seed': 42, 'status': 'success'}
+2026-05-08 11:31:26,618 - INFO - Job completed successfully
